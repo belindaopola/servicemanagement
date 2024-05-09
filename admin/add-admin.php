@@ -1,10 +1,20 @@
 <?php include('partials/menu.php'); ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<style>
+
+</style>
+</head>
+
+<body>
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Admin</h1>
-
-        <br><br>
 
         <?php 
             if(isset($_SESSION['add'])) //Checking whether the SEssion is Set of Not
@@ -15,45 +25,37 @@
         ?>
 
         <form action="" method="POST">
+            <div class="row mb-4">
+            <label for="inputFullName" class="col-sm-1 col-form-label">Full Name:</label>
+                <div class="col-sm-3">
+                <input type="text" id="full-name" name="full_name" placeholder="Enter Name" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+            <label for="InputUsername" class="col-sm-1 col-form-label">Username:</label>
+                <div class="col-sm-3">
+                <input type="text" id="username" name="username" placeholder="Enter Username" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label">Password:</label>
+                <div class="col-sm-3">
+                <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control" >
+                </div>
+            </div>
 
-            <table class="tbl-30">
-                <tr>
-                    <td>Full Name: </td>
-                    <td>
-                        <input type="text" name="full_name" placeholder="Enter Your Name">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Username: </td>
-                    <td>
-                        <input type="text" name="username" placeholder="Your Username">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Password: </td>
-                    <td>
-                        <input type="password" name="password" placeholder="Your Password">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
-                    </td>
-                </tr>
-
-            </table>
-
+            <button type="submit" name="submit" value="Add Admin" class="btn btn-primary col-sm-1">Add Admin</button>
         </form>
-
-
     </div>
 </div>
 
-<?php include('partials/footer.php'); ?>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+</body>
+</html>
+
+<?php include('partials/footer.php'); ?>
 
 <?php 
     //Process the Value from Form and Save it in Database
@@ -99,7 +101,5 @@
             //Redirect Page to Add Admin
             header("location:".SITEURL.'admin/add-admin.php');
         }
-
-    }
-    
+    } 
 ?>
