@@ -55,8 +55,6 @@
 </body>
 </html>
 
-<?php include('partials/footer.php'); ?>
-
 <?php 
     //Process the Value from Form and Save it in Database
 
@@ -103,3 +101,5 @@
         }
     } 
 ?>
+
+<?php include('partials/footer.php'); ?>
